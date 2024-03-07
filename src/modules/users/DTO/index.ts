@@ -2,10 +2,10 @@ import { IsString } from "class-validator";
 
 export class CreateUserDTO{
     @IsString()
-    firstName: string
+    first_name: string
 
     @IsString()
-    lastName: string
+    last_name: string
 
     @IsString()
     password: string
