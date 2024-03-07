@@ -5,6 +5,7 @@ import { UsersModule } from 'src/modules/users/users.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { SequelizeModule } from '@nestjs/sequelize';
 import configuration from 'src/configuration';
+import { User } from '../users/models/user.model';
 
 @Module({
   imports: [UsersModule, SequelizeModule.forRootAsync({
@@ -17,7 +18,7 @@ import configuration from 'src/configuration';
       username: configService.get("db_user"),
       database: configService.get("db_name"),
       password: configService.get("db_password"),
-      models: [],
+      models: [User],
       synchronize: true,
       autoLoadModels: true
     })
