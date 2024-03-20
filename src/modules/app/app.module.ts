@@ -6,10 +6,11 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { SequelizeModule } from '@nestjs/sequelize';
 import configuration from 'src/configuration';
 import { User } from '../users/models/user.model';
+import { AuthModule } from '../auth/auth.module';
 
 @Module({
   imports: [UsersModule, SequelizeModule.forRootAsync({
-    imports: [ConfigModule],
+    imports: [ConfigModule, AuthModule],
     inject: [ConfigService],
     useFactory: (configService: ConfigService) => ({
       dialect: "postgres",
