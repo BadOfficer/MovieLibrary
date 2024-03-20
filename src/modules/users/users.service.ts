@@ -3,7 +3,6 @@ import { InjectModel } from '@nestjs/sequelize';
 import { User } from './models/user.model';
 import * as bcrypt from "bcrypt"
 import { CreateUserDTO } from './DTO';
-import { AppErrors } from 'src/common/constants/errors';
 
 @Injectable()
 export class UsersService {
