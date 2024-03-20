@@ -7,10 +7,11 @@ import { SequelizeModule } from '@nestjs/sequelize';
 import configuration from 'src/configuration';
 import { User } from '../users/models/user.model';
 import { AuthModule } from '../auth/auth.module';
+import { TokenModule } from '../token/token.module';
 
 @Module({
   imports: [UsersModule, SequelizeModule.forRootAsync({
-    imports: [ConfigModule, AuthModule],
+    imports: [ConfigModule, AuthModule, TokenModule],
     inject: [ConfigService],
     useFactory: (configService: ConfigService) => ({
       dialect: "postgres",
