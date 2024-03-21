@@ -29,4 +29,8 @@ export class UsersService {
     async findUserByEmail(email: string) {
         return this.userRepository.findOne({where: { email }})
     }
+
+    async publicUser(email: string) {
+        return this.userRepository.findOne({where: {email}, attributes: {exclude: ['password']}})
+    }
 }
