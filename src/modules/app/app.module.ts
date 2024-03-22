@@ -9,10 +9,11 @@ import { User } from '../users/models/user.model';
 import { AuthModule } from '../auth/auth.module';
 import { TokenModule } from '../token/token.module';
 import { LikedlistModule } from '../likedlist/likedlist.module';
+import { BookmarkslistModule } from '../bookmarkslist/bookmarkslist.module';
 
 @Module({
   imports: [UsersModule, SequelizeModule.forRootAsync({
-    imports: [ConfigModule, AuthModule, TokenModule, LikedlistModule],
+    imports: [ConfigModule, AuthModule, TokenModule, LikedlistModule, BookmarkslistModule],
     inject: [ConfigService],
     useFactory: (configService: ConfigService) => ({
       dialect: "postgres",
