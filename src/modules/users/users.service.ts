@@ -2,7 +2,7 @@ import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { User } from './models/user.model';
 import * as bcrypt from "bcrypt"
-import { CreateUserDTO, UpdateUserDTO } from './DTO';
+import { CreateUserDTO, UpdateUserDTO } from './dto';
 
 @Injectable()
 export class UsersService {
