@@ -1,14 +1,11 @@
-import { Column, Model, Table } from "sequelize-typescript";
+import { Column, ForeignKey, Model, Table } from "sequelize-typescript";
 import { User } from "src/modules/users/models/user.model";
 
 @Table
-export class BookmarkslistModel extends Model{
-    @Column
+export class Bookmarkslist extends Model{
+    @ForeignKey(() => User)
     user: User
 
     @Column
     name: string
-
-    @Column
-    assetId: string
 }

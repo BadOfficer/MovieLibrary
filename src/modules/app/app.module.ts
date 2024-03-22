@@ -10,6 +10,8 @@ import { AuthModule } from '../auth/auth.module';
 import { TokenModule } from '../token/token.module';
 import { LikedlistModule } from '../likedlist/likedlist.module';
 import { BookmarkslistModule } from '../bookmarkslist/bookmarkslist.module';
+import { Likedlist } from '../likedlist/models/likedlist.model';
+import { Bookmarkslist } from '../bookmarkslist/models/bookmarkslist.model';
 
 @Module({
   imports: [UsersModule, SequelizeModule.forRootAsync({
@@ -22,7 +24,7 @@ import { BookmarkslistModule } from '../bookmarkslist/bookmarkslist.module';
       username: configService.get("db_user"),
       database: configService.get("db_name"),
       password: configService.get("db_password"),
-      models: [User],
+      models: [User, Likedlist, Bookmarkslist],
       synchronize: true,
       autoLoadModels: true
     })
